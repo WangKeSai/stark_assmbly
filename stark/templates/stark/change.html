@@ -1,0 +1,49 @@
+{% extends 'layout.html' %}
+
+{% block css %}
+
+    <style>
+
+        ul{
+            list-style-type: none;
+            padding: 0;
+        }
+        ul li{
+            float: left;
+            padding: 10px;
+            padding-left: 0;
+            width: 80px;
+        }
+        ul li i{
+            font-size: 18px;
+            margin-left: 5px;
+            color: #6d6565;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+
+    <div class="luffy-container">
+        <form class="form-horizontal clearfix" method="post" novalidate>
+            {% csrf_token %}
+
+            {% for field in form %}
+                <div class="form-group clearfix">
+                    <label class="col-sm-2 control-label">{{ field.label }}</label>
+                    <div class="col-sm-8">
+                        {{ field }} <span style="color:firebrick;">{{ field.errors.0 }}</span>
+                    </div>
+                </div>
+            {% endfor %}
+            <div class="form-group col-sm-12">
+                <div class="col-sm-6">
+                    <div class="col-sm-offset-3">
+                        <button type="submit" class="btn btn-primary">提 交</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+{% endblock %}

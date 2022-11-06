@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+    <div class="luffy-container">
+        <div class="alert alert-danger" role="alert">
+            <form method="post">
+                <p style="font-size: 13px"><li class="fa fa-warning" aria-hidden="true"></li>删除后将不可恢复，请确定是否删除！</p>
+
+                <div style="margin-top: 20px">
+                    <a href="{{ cancel }}" class="btn btn-default btn-sm">取消</a>
+                    <input type="submit" class="btn btn-default btn-sm" value="确认">
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+{% endblock %}
